@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartTicket - Jatim Park 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1>Ticket</h1>
+        <p>Pengalaman Tanpa Batas di Jatim Park 2</p>
+      </div>
+    </header>
+
+    <main class="content-section">
+      <section class="form-container">
+        <h2>Pesan Tiket Anda Sekarang! <i class="fas fa-ticket-alt"></i></h2>
+        <form id="ticket-form">
+          <div class="input-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" />
+          </div>
+          <div class="input-group">
+            <label for="address">Alamat</label>
+            <textarea id="address" name="address" required placeholder="Alamat lengkap"></textarea>
+          </div>
+          <div class="input-group">
+            <label for="ticket_type">Pilihan Tiket</label>
+            <select id="ticket_type" name="ticket_type" required>
+              <option value="dewasa" data-price="120000">Dewasa - Rp120.000</option>
+              <option value="anak-anak" data-price="85000">Anak-anak - Rp85.000</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="payment_proof">Bukti Pembayaran</label>
+            <p class="small-text">Transfer ke Rek. BCA 1234-5678-90 a.n. Jatim Park 2</p>
+            <input type="file" id="payment_proof" name="payment_proof" accept="image/*" required />
+          </div>
+          <button type="submit" class="submit-btn">Proses Pemesanan <i class="fas fa-arrow-right"></i></button>
+        </form>
+      </section>
+
+      <section class="gelang-preview" id="gelang-preview" style="display: none">
+        <div class="gelang-box">
+          <p class="status-message"><i class="fas fa-check-circle"></i> Pembayaran Terverifikasi! Tiket Anda Siap.</p>
+
+          <div class="gelang-ticket-container">
+            <div class="gelang-info-overlay">
+              <div class="ticket-details">
+                <p class="gelang-name"><i class="fas fa-user-circle"></i> <span id="preview-name"></span></p>
+                <p class="gelang-type"><i class="fas fa-ticket-alt"></i> <span id="preview-type"></span></p>
+              </div>
+
+              <div class="barcode-area">
+                <div id="barcode-container"></div>
+                <p id="barcode-number" class="barcode-number"></p>
+              </div>
+            </div>
+          </div>
+
+          <p class="scan-note"><i class="fas fa-barcode"></i> Tunjukkan kode ini untuk dipindai saat masuk!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Jatim Park 2. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
